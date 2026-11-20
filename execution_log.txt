@@ -1,0 +1,117 @@
+### Step 1: Create Project
+Initialized empty Git repository in /home/claude/work/DatasetVersioning/.git/
+
+### Step 2: dvc init
+Initialized DVC repository.
+
+You can now commit the changes to git.
+
++---------------------------------------------------------------------+
+|                                                                     |
+|        DVC has enabled anonymous aggregate usage analytics.         |
+|     Read the analytics documentation (and how to opt-out) here:     |
+|             <https://dvc.org/doc/user-guide/analytics>              |
+|                                                                     |
++---------------------------------------------------------------------+
+
+What's next?
+------------
+- Check out the documentation: <https://dvc.org/doc>
+- Get help and share ideas: <https://dvc.org/chat>
+- Star us on GitHub: <https://github.com/treeverse/dvc>
+5803a79 Initialize DVC
+
+### Step 3: Create dataset
+RollNo,Name,Marks
+1,Amit,80
+2,Rahul,72
+3,Priya,91
+4,Sneha,88
+
+### Step 4: dvc add
+
+To track the changes with git, run:
+
+	git add data/student.csv.dvc data/.gitignore
+
+To enable auto staging, run:
+
+	dvc config core.autostage true
+?? data/
+
+### Step 5: Commit
+
+### Step 6: Modify dataset (Version 2)
+
+To track the changes with git, run:
+
+	git add data/student.csv.dvc
+
+To enable auto staging, run:
+
+	dvc config core.autostage true
+RollNo,Name,Marks
+1,Amit,80
+2,Rahul,72
+3,Priya,91
+4,Sneha,88
+5,Neha,77
+
+### Step 7: git log
+53201b2 Dataset Version 2
+bb793e9 Track dataset using DVC
+5803a79 Initialize DVC
+
+### Step 8: Restore previous dataset
+Version 1 commit: bb793e9
+M       data/student.csv
+--- student.csv now (Version 1):
+RollNo,Name,Marks
+1,Amit,80
+2,Rahul,72
+3,Priya,91
+4,Sneha,88
+M       data/student.csv
+--- back on main (Version 2):
+RollNo,Name,Marks
+1,Amit,80
+2,Rahul,72
+3,Priya,91
+4,Sneha,88
+5,Neha,77
+
+### Step 9: Remote storage
+Setting 'localstorage' as a default remote.
+[core]
+    remote = localstorage
+['remote "localstorage"']
+    url = ../../dvc-storage
+
+### Step 10: dvc push
+1 file pushed
+
+### Step 11: Delete and recover
+student.csv.dvc
+A       data/student.csv
+1 file added
+--- restored:
+RollNo,Name,Marks
+1,Amit,80
+2,Rahul,72
+3,Priya,91
+4,Sneha,88
+5,Neha,77
+
+### dvc status
+Data and pipelines are up to date.
+Cache and remote 'localstorage' are in sync.
+288effb Configure DVC remote
+53201b2 Dataset Version 2
+bb793e9 Track dataset using DVC
+5803a79 Initialize DVC
+1 file pushed
+c087b24 Add README
+288effb Configure DVC remote
+53201b2 Dataset Version 2
+bb793e9 Track dataset using DVC
+5803a79 Initialize DVC
